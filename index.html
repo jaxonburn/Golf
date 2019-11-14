@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="action.js" defer></script>
+    <title>Golf Application</title>
+</head>
+<body>
+    <div class="container">
+    <div id="holecontain"><div id="head"></div></div>
+        <div class="pickcourse">
+            <span class="golfname">Welcome to Golf Course Api</span>
+            <div class="select">
+                <select onchange="selectCourse(this.value)">
+                    <option value="">Select a Course</option>
+                    <option value="0">Fox Hollow</option>
+                    <option value="1">Thanksgiving Point</option>
+                    <option value="2">Spanish Oaks</option>
+                </select>
+            </div>
+        
+        </div>
+    </div>
+</body>
+</html>
