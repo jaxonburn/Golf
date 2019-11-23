@@ -145,6 +145,33 @@ getCourseInfo().then(course => {
   
 })
 
+let clicked = 0;
 function addPlayer(){
+  clicked++;
+  $(`#player${clicked}`).css({"display": "flex", "text-align": "center", "justify-content": "space-evenly"});
+  for(i = 0; i < 18; i++){
+    $(`#player${clicked}`).append(`<div class="hole ${i}" id="player${clicked}-${i}" contenteditable="true"></div>`)
+    document.getElementById(`player${clicked}-${i}`).addEventListener("input", function(){
+      let total = 0;
+      let num;
+      for(i = 0; i < 18; i++){
+        num = document.getElementById(`player${clicked}-${i}`).innerHTML;
+        if(num == null){
+          console.log("hmm")
+        }else{
+          total += parseInt(num);
+        }
+        
+        
+        
+       
   
+      }
+     console.log(total);
+    }, false)
+  }
+  document.getElementById(`player${clicked}-8`).outerHTML += `<div class="in"></div>`
+  document.getElementById(`player${clicked}-17`).outerHTML +=  `<div id="playerout${clicked}" class="in"></div>`
+  document.getElementById(`playerout${clicked}`).outerHTML += `<div class="Total in"></div>`
 }
+

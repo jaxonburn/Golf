@@ -139,6 +139,7 @@ body {
     margin: 10px;
     outline: none;
     opacity: 90%;
+    cursor: pointer;
 }
 
 #player1 {
