@@ -186,7 +186,36 @@ function addPlayer(){
   document.getElementById(`player${clicked}-8`).outerHTML += `<div class="in" id="playerout${clicked}">0</div>`
   document.getElementById(`player${clicked}-17`).outerHTML +=  `<div id="playerin${clicked}" class="in">0</div>`
   document.getElementById(`playerin${clicked}`).outerHTML += `<div class="Total in" id="playertotal${clicked}">0</div>`
-  
+
+
+ document.getElementById('player1name').addEventListener('keypress', function(e) {
+    var enter = e.which || e.keycode;
+    if(enter === 13) {
+      checkNames("p1");
+      $(this).blur()
+    }
+  })
+document.getElementById('player2name').addEventListener('keypress', function(e) {
+    var enter = e.which || e.keycode;
+    if(enter === 13) {
+      checkNames("p2")
+      $(this).blur()
+    }
+  })
+document.getElementById('player3name').addEventListener('keypress', function(e) {
+    var enter = e.which || e.keycode;
+    if(enter === 13) {
+      checkNames("p3")
+      $(this).blur()
+    }
+  })
+document.getElementById('player4name').addEventListener('keypress', function(e) {
+    var enter = e.which || e.keycode;
+    if(enter === 13) {
+      checkNames("p4")
+      $(this).blur()
+    }
+  })
 }
 
 
@@ -245,7 +274,7 @@ function tallyScores(player, id){
 function playerout1(){
   let player1out = 0;
   let player1in = 0;
-  for(let i = 0; i < 9; i++){
+  for(let i = 0; i < 8; i++){
     somenum1 = document.getElementById(`player1-${i}`).innerText
     somenum1 = Number(somenum1);
     if(somenum1 == ""){
@@ -258,7 +287,7 @@ function playerout1(){
       document.getElementById("playerout1").outerHTML = `<div class="in" id="playerout1">${player1out}</div>`
     }
   }
-  for(let i = 10; i <= 17; i++){
+  for(let i = 9; i <= 17; i++){
     somenum1 = document.getElementById(`player1-${i}`).innerText
     somenum1 = Number(somenum1);
     if(somenum1 == ""){
@@ -356,14 +385,29 @@ function playerout4(){
   }
 }
 
-function checkNames() {
+function checkNames(player) {
+  console.log(player);
   let player1 = document.getElementById('player1name').innerText;
   let player2 = document.getElementById('player2name').innerText;
   let player3 = document.getElementById('player3name').innerText;
   let player4 = document.getElementById('player4name').innerText;
   for(i = 1;i <= 4; i++){
-    if(`player${i}` == player2 || player3 || player4 ){
-      document.getElementById(`player${i}`).innerText = "";
+
     }
   }
-}
+
+  function clearName(player){
+    switch (player){
+      case 1:
+          document.getElementById('player1name').innerText = ""
+          break;
+      case 2:
+          document.getElementById('player2name').innerText = ""
+          break;
+      case 3:
+          document.getElementById('player3name').innerText = ""
+          break;
+      case 4:
+          document.getElementById('player4name').innerText = ""
+    }
+  }
