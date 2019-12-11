@@ -386,15 +386,65 @@ function playerout4(){
 }
 
 function checkNames(player) {
-  console.log(player);
   let player1 = document.getElementById('player1name').innerText;
   let player2 = document.getElementById('player2name').innerText;
   let player3 = document.getElementById('player3name').innerText;
   let player4 = document.getElementById('player4name').innerText;
-  for(i = 1;i <= 4; i++){
-
+  switch(player) {
+    case "p1":
+    switch(player1){
+      case player2:
+          document.getElementById('player1name').innerText = "";
+      break;
+      case player3:
+          document.getElementById('player1name').innerText = "";
+      break;
+      case player4:
+          document.getElementById('player1name').innerText = "";
+      break;
     }
+    break;
+    case "p2":
+        switch(player2){
+          case player1:
+              document.getElementById('player2name').innerText = "";
+          break;
+          case player3:
+              document.getElementById('player2name').innerText = "";
+          break;
+          case player4:
+              document.getElementById('player2name').innerText = "";
+          break;
+        }
+    break;
+    case "p3":
+        switch(player3){
+          case player2:
+              document.getElementById('player3name').innerText = "";
+          break;
+          case player1:
+              document.getElementById('player3name').innerText = "";
+          break;
+          case player4:
+              document.getElementById('player3name').innerText = "";
+          break;
+        }
+    break;
+    case "p4":
+        switch(player4){
+          case player2:
+              document.getElementById('player4name').innerText = "";
+          break;
+          case player3:
+              document.getElementById('player4name').innerText = "";
+          break;
+          case player1:
+              document.getElementById('player4name').innerText = "";
+          break;
+        }
+    break;
   }
+}
 
   function clearName(player){
     switch (player){

@@ -212,3 +212,19 @@ width: 100%;
     align-items: center;
     overflow: hidden;
 }
+
+#parcheck {
+    display: hidden;
+    border-radius: 30px;
+    height: 30px;
+    background: white;
+    opacity: 70%;
+    width: 20%;
+    text-align: center;
+}
+.parcheckcontain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
