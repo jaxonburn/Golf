@@ -275,7 +275,7 @@ function playerout1(){
   let player1out = 0;
   let player1in = 0;
   let counter = 0;
-  for(let i = 0; i < 8; i++){
+  for(let i = 0; i < 9; i++){
     somenum1 = document.getElementById(`player1-${i}`).innerText
     somenum1 = Number(somenum1);
     if(somenum1 == ""){
@@ -311,9 +311,9 @@ function playerout1(){
      document.getElementById("parcheck").innerText = `Nice Work! ${partotal}`
     }else if(partotal < 0){
       partotal = Math.abs(partotal)
-      document.getElementById("parcheck").innerText = `Yikes! ${partotal}`
+      document.getElementById("parcheck").innerText = `Yikes!  +${partotal}`
     }
-      
+    document.getElementById('parcheck').style.display = "block"
     $("#parcheck").animate({'marginRight': "0px"}, 600);
 
     
@@ -327,7 +327,7 @@ function playerout2(){
   let player2out = 0;
   let player2in = 0;
   let counter = 0;
-  for(let i = 0; i <= 8; i++){
+  for(let i = 0; i < 9; i++){
     somenum2 = document.getElementById(`player2-${i}`).innerText
     somenum2 = Number(somenum2);
     if(somenum2 == ""){
@@ -362,9 +362,9 @@ function playerout2(){
      document.getElementById("parcheck").innerText = `Nice Work! ${partotal}`
     }else if(partotal < 0){
       partotal = Math.abs(partotal)
-      document.getElementById("parcheck").innerText = `Yikes! ${partotal}`
+      document.getElementById("parcheck").innerText = `Yikes!  +${partotal}`
     }
-      
+    document.getElementById('parcheck').style.display = "block"
     $("#parcheck").animate({'marginRight': "0px"}, 600);
 
       
@@ -413,9 +413,9 @@ function playerout3(){
      document.getElementById("parcheck").innerText = `Nice Work! ${partotal}`
     }else if(partotal < 0){
       partotal = Math.abs(partotal)
-      document.getElementById("parcheck").innerText = `Yikes! ${partotal}`
+      document.getElementById("parcheck").innerText = `Yikes!  +${partotal}`
     }
-      
+    document.getElementById('parcheck').style.display = "block"
     $("#parcheck").animate({'marginRight': "0px"}, 600);
 
       
@@ -464,9 +464,9 @@ function playerout4(){
        document.getElementById("parcheck").innerText = `Nice Work! ${partotal}`
       }else if(partotal < 0){
         partotal = Math.abs(partotal)
-        document.getElementById("parcheck").innerText = `Yikes! ${partotal}`
+        document.getElementById("parcheck").innerText = `Yikes!  +${partotal}`
       }
-        
+      document.getElementById('parcheck').style.display = "block"
       $("#parcheck").animate({'marginRight': "0px"}, 600);
 
         
