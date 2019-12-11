@@ -58,7 +58,7 @@ function loadHoles(value, Name) {
   $(".pickcourse").fadeOut(200);
   let difficulty;
   let totalyards = 0;
-  let totalpar = 0;
+  var totalpar = 0;
   let totalhcp = 0;
   let inyards = 0;
   let outyards = 0;
@@ -106,7 +106,7 @@ function loadHoles(value, Name) {
   }    
   document.getElementById("par8").outerHTML += `<div class="in">${outpar}</div>`
   document.getElementById("par17").outerHTML +=  `<div id="parout" class="in">${inpar}</div>`
-  document.getElementById("parout").outerHTML += `<div class="Total in">${totalpar}</div>`
+  document.getElementById("parout").outerHTML += `<div class="Total in" id="totalpar">${totalpar}</div>`
       document.getElementById("hcp8").outerHTML += `<div class="in">${outhcp}</div>`
       document.getElementById("hcp17").outerHTML +=  `<div id="hcpout" class="in">${inhcp}</div>`
       document.getElementById("hcpout").outerHTML += `<div class="Total in">${totalhcp}</div>`
@@ -274,6 +274,7 @@ function tallyScores(player, id){
 function playerout1(){
   let player1out = 0;
   let player1in = 0;
+  let counter = 0;
   for(let i = 0; i < 8; i++){
     somenum1 = document.getElementById(`player1-${i}`).innerText
     somenum1 = Number(somenum1);
@@ -283,6 +284,7 @@ function playerout1(){
      
     }
     else{
+      counter++;
       player1out += parseFloat(somenum1);
       document.getElementById("playerout1").outerHTML = `<div class="in" id="playerout1">${player1out}</div>`
     }
@@ -295,14 +297,36 @@ function playerout1(){
     }else if(Number.isNaN(somenum1)){
      
     }else{
+      counter++;
       player1in += parseFloat(somenum1);
       document.getElementById("playerin1").outerHTML = `<div class="in" id="playerin1">${player1in}</div>`
     }
   }
+  if(counter == 18){
+    let par = document.getElementById("totalpar").innerText;
+    let total = player1in += player1out
+    let partotal = par -= total;
+    if(partotal > 0){
+     partotal = -Math.abs(partotal)
+     document.getElementById("parcheck").innerText = `Nice Work! ${partotal}`
+    }else if(partotal < 0){
+      partotal = Math.abs(partotal)
+      document.getElementById("parcheck").innerText = `Yikes! ${partotal}`
+    }
+      
+    $("#parcheck").animate({'marginRight': "0px"}, 600);
+
+    
+  
+  }
+  setTimeout(function(){ 
+    document.getElementById('parcheck').style.display = "none"}, 5000);
+
 }
 function playerout2(){
   let player2out = 0;
   let player2in = 0;
+  let counter = 0;
   for(let i = 0; i <= 8; i++){
     somenum2 = document.getElementById(`player2-${i}`).innerText
     somenum2 = Number(somenum2);
@@ -311,6 +335,7 @@ function playerout2(){
     }else if(Number.isNaN(somenum2)){
      
     }else{
+      counter++;
       player2out += parseFloat(somenum2);
       document.getElementById("playerout2").outerHTML = `<div class="in" id="playerout2">${player2out}</div>`
     }
@@ -323,14 +348,36 @@ function playerout2(){
     }else if(Number.isNaN(somenum2)){
      
     }else{
+      counter++;
       player2in += parseFloat(somenum2);
       document.getElementById("playerin2").outerHTML = `<div class="in" id="playerin2">${player2in}</div>`
     }
   }
+  if(counter == 18){
+    let par = document.getElementById("totalpar").innerText;
+    let total = player2in += player2out
+    let partotal = par -= total;
+    if(partotal > 0){
+     partotal = -Math.abs(partotal)
+     document.getElementById("parcheck").innerText = `Nice Work! ${partotal}`
+    }else if(partotal < 0){
+      partotal = Math.abs(partotal)
+      document.getElementById("parcheck").innerText = `Yikes! ${partotal}`
+    }
+      
+    $("#parcheck").animate({'marginRight': "0px"}, 600);
+
+      
+  
+  }
+  setTimeout(function(){ 
+    document.getElementById('parcheck').style.display = "none"}, 5000);
+
 }
 function playerout3(){
   let player3out = 0;
   let player3in = 0;
+  let counter = 0;
   for(let i = 0; i < 9; i++){
     somenum3 = document.getElementById(`player3-${i}`).innerText
     somenum3 = Number(somenum3);
@@ -339,6 +386,7 @@ function playerout3(){
     }else if(Number.isNaN(somenum3)){
      
     }else{
+      counter++;
       player3out += parseFloat(somenum3);
       document.getElementById("playerout3").outerHTML = `<div class="in" id="playerout3">${player3out}</div>`
     }
@@ -351,14 +399,35 @@ function playerout3(){
     }else if(Number.isNaN(somenum3)){
      
     }else{
+      counter++;
       player3in += parseFloat(somenum3);
       document.getElementById("playerin3").outerHTML = `<div class="in" id="playerin3">${player3in}</div>`
     }
   }
+  if(counter == 18){
+    let par = document.getElementById("totalpar").innerText;
+    let total = player3in += player3out
+    let partotal = par -= total;
+    if(partotal > 0){
+     partotal = -Math.abs(partotal)
+     document.getElementById("parcheck").innerText = `Nice Work! ${partotal}`
+    }else if(partotal < 0){
+      partotal = Math.abs(partotal)
+      document.getElementById("parcheck").innerText = `Yikes! ${partotal}`
+    }
+      
+    $("#parcheck").animate({'marginRight': "0px"}, 600);
+
+      
+  
+  }
+  setTimeout(function(){ 
+    document.getElementById('parcheck').style.display = "none"}, 5000);
 }
 function playerout4(){
   let player4out = 0;
   let player4in = 0;
+  let counter = 0;
   for(let i = 0; i < 9; i++){
     somenum4 = document.getElementById(`player4-${i}`).innerText
     somenum4 = Number(somenum4);
@@ -367,6 +436,7 @@ function playerout4(){
     }else if(Number.isNaN(somenum4)){
      
     }else{
+      counter++;
       player4out += parseFloat(somenum4);
       document.getElementById("playerout4").outerHTML = `<div class="in" id="playerout4">${player4out}</div>`
     }
@@ -379,10 +449,32 @@ function playerout4(){
     }else if(Number.isNaN(somenum4)){
      
     }else{
-      player1in += parseFloat(somenum4);
+      counter++;
+      
+      player4in += parseFloat(somenum4);
       document.getElementById("playerin4").outerHTML = `<div class="in" id="playerin4">${player4in}</div>`
     }
   }
+  if(counter == 18){
+      let par = document.getElementById("totalpar").innerText;
+      let total = player4in += player4out
+      let partotal = par -= total;
+      if(partotal > 0){
+       partotal = -Math.abs(partotal)
+       document.getElementById("parcheck").innerText = `Nice Work! ${partotal}`
+      }else if(partotal < 0){
+        partotal = Math.abs(partotal)
+        document.getElementById("parcheck").innerText = `Yikes! ${partotal}`
+      }
+        
+      $("#parcheck").animate({'marginRight': "0px"}, 600);
+
+        
+    
+    }
+    setTimeout(function(){ 
+      document.getElementById('parcheck').style.display = "none"}, 5000);
+  
 }
 
 function checkNames(player) {

@@ -214,7 +214,7 @@ width: 100%;
 }
 
 #parcheck {
-    display: hidden;
+    margin-right: 2000px;
     border-radius: 30px;
     height: 30px;
     background: white;
