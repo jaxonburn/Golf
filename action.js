@@ -315,7 +315,7 @@ function playerout1(){
     }
     document.getElementById('parcheck').style.display = "block"
     $("#parcheck").animate({'marginRight': "0px"}, 600);
-
+    
     
   
   }
